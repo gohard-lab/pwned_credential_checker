@@ -1,7 +1,20 @@
 import streamlit as st
 # 1. Import your established web tracking engine
-from tracker_web import log_app_usage
+from tracker_hub import log_app_usage
 from pwned_credential_checker import check_password_leak
+
+
+# # app.py (기존 호출부 디버깅용 임시 수정)
+# try:
+#     log_app_usage(
+#         app_name="pwned_checker_web",
+#         action="click_diagnose_button",
+#         details={"status": "debug_test"}
+#     )
+#     print("🎯 [디버그] 로그 전송 시도 성공!")
+# except Exception as e:
+#     print(f"❌ [디버그] 로그 전송 중 치명적 에러 발생: {e}")
+
 
 # Initialize session state to decouple result printing from the button click event
 if "breach_result" not in st.session_state:
