@@ -50,9 +50,9 @@ if st.button("보안 진단 시작하기", use_container_width=True):
                 app_name="pwned_checker_web",
                 action="click_diagnose_button",
                 details={                    
+                    "is_compromised": leaks > 0,
                     "pwd_length": len(input_password), # 비밀번호 원본 대신 '글자 수'와 '유출 수 결과'만 수집 허브에 전송
                     "leak_count_result": leaks,
-                    "is_compromised": leaks > 0,
                     "encryption_method": "SHA-1 (K-Anonymity)"
                 }
             )
